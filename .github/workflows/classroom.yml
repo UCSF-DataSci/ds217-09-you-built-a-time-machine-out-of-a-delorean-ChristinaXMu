@@ -26,6 +26,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r .github/test/requirements.txt
 
+    - name: Install notebook visualization deps
+      run: |
+        pip install matplotlib seaborn
+
+    - name: Install dependencies
+      run: |
+        pip install jupyter nbconvert
+
     - name: Download latest tests from upstream
       run: |
         mkdir -p .github/test

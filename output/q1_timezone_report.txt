@@ -1,7 +1,7 @@
 Timezone Operations Report
 
 TODO: Document your timezone operations:
-- The original data was in naive datetime format (no timezone info).
+- The original data was in naive datetime format (no explicit timezone info).
 - To localize the data, I used tz_localize('UTC') to assign UTC timezone to the naive datetimes.
 - The UTC-localized datetimes were then converted to 'US/Eastern' timezone using tz_convert('US/Eastern').
 - UTC was chosen as the base timezone to avoid issues with daylight saving time (DST) transitions, which can create ambiguity in local times. 
