@@ -1,0 +1,13 @@
+Timezone Operations Report
+
+TODO: Document your timezone operations:
+- The original data was in naive datetime format (no timezone info).
+- To localize the data, I used tz_localize('UTC') to assign UTC timezone to the naive datetimes.
+- The UTC-localized datetimes were then converted to 'US/Eastern' timezone using tz_convert('US/Eastern').
+- UTC was chosen as the base timezone to avoid issues with daylight saving time (DST) transitions, which can create ambiguity in local times. 
+By storing data in UTC, we ensure that all timestamps are consistent and unambiguous, as UTC does not observe DST.
+- An example of a datetime before and after conversion:
+  - Original UTC datetime: 2023-03-12 10:00:00+00:00
+  - Converted Eastern datetime: 2023-03-12 05:00:00-05:00
+- UTC is recommended for storing timestamps in multi-site clinical trials to maintain consistency across different locations and timezones.
+Storing timestamps in UTC ensures calculations, comparisons, and merging across sites are unambiguous.
